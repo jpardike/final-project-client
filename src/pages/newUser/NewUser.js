@@ -22,6 +22,7 @@ class NewUser extends React.Component {
           <label htmlFor="location">Location
           </label>
             <input type="text" />
+          <input type="button" value="SIGNUP"/>
         </form>
       </div>
     );
