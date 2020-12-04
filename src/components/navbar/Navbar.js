@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-import './navbar.css';
+import "./navbar.css";
 
 class Navbar extends React.Component {
   render() {
@@ -33,14 +34,14 @@ class Navbar extends React.Component {
               </form>
             </li> */}
             <li className="nav-item">
-              <a className="nav-link" id="nav-text" href="#">
+              <Link to="/user/new" className="nav-link" id="nav-text">
                 SIGNUP
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" id="nav-text" id="nav-text" href="#">
+              <Link to="/user/login" className="nav-link" id="nav-text">
                 LOGIN
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
