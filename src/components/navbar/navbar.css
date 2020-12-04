@@ -5,3 +5,7 @@ nav {
 #nav-text {
   color: #F0F3BD;
 }
+
+.hidden {
+  display: none;
+}

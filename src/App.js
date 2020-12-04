@@ -20,14 +20,13 @@ class App extends React.Component {
   }
 
   changeUser = (data) => {
-    // console.log(data);
     this.setState({currentUser: data, isLoggedIn: true});
   }
 
   render() {
     return (
       <div className="container-fluid p-0">
-        <Navbar />
+        <Navbar isLoggedIn={this.state.isLoggedIn} />
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/about" component={About} />

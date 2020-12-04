@@ -4,6 +4,37 @@ import { Link } from "react-router-dom";
 import "./navbar.css";
 
 class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.profileLinkRef = React.createRef();
+    this.signupLinkRef = React.createRef();
+    this.loginLinkRef = React.createRef();
+  }
+
+  componentDidMount() {
+    const profileLink = this.profileLinkRef.current;
+    const signupLink = this.signupLinkRef.current;
+    const loginLink = this.loginLinkRef.current;
+    profileLink.classList.add("hidden");
+    signupLink.classList.remove("hidden");
+    loginLink.classList.remove("hidden");
+  }
+
+  componentDidUpdate() {
+    const profileLink = this.profileLinkRef.current;
+    const signupLink = this.signupLinkRef.current;
+    const loginLink = this.loginLinkRef.current;
+    if (!this.props.isLoggedIn) {
+      profileLink.classList.add("hidden");
+      signupLink.classList.remove("hidden");
+      loginLink.classList.remove("hidden");
+    } else {
+      profileLink.classList.remove("hidden");
+      signupLink.classList.add("hidden");
+      loginLink.classList.add("hidden");
+    }
+  }
+
   render() {
     return (
       <nav className="navbar navbar-expand-md">
@@ -33,17 +64,17 @@ class Navbar extends React.Component {
                 />
               </form>
             </li> */}
-            <li className="nav-item">
+            <li ref={this.profileLinkRef} className="nav-item">
               <Link to="/user/:id" className="nav-link" id="nav-text">
                 Profile
               </Link>
             </li>
-            <li className="nav-item">
+            <li ref={this.signupLinkRef} className="nav-item">
               <Link to="/user/new" className="nav-link" id="nav-text">
                 SIGNUP
               </Link>
             </li>
-            <li className="nav-item">
+            <li ref={this.loginLinkRef} className="nav-item">
               <Link to="/user/login" className="nav-link" id="nav-text">
                 LOGIN
               </Link>
