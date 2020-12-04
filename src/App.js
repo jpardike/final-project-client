@@ -21,7 +21,7 @@ class App extends React.Component {
 
   changeUser = (data) => {
     // console.log(data);
-    this.setState({currentUser: data});
+    this.setState({currentUser: data, isLoggedIn: true});
   }
 
   render() {
