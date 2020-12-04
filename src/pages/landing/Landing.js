@@ -1,12 +1,12 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import UserModel from "../../models/user";
+// import UserModel from "../../models/user";
 
 import "./landing.css";
 
 class Landing extends React.Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
     // this.state = {
     //     name: "",
     //     username: "",
@@ -14,7 +14,7 @@ class Landing extends React.Component {
     //     password: "",
     //     location: "",
     // };
-  }
+  // }
 
   // handleSignupInputChange = (event) => {
   //   this.setState({ [event.target.name]: event.target.value} );
@@ -32,7 +32,6 @@ class Landing extends React.Component {
   // }
 
   render() {
-    console.log(this.signupModalRef);
     return (
       <div className="row">
         <div className="col-md text-center">COMPANY LOGO</div>

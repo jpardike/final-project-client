@@ -7,9 +7,9 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav className="navbar navbar-expand-md">
-        <a className="navbar-brand" id="nav-text" href="#">
+        <Link to="/" className="navbar-brand" id="nav-text">
           ICON
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -33,6 +33,11 @@ class Navbar extends React.Component {
                 />
               </form>
             </li> */}
+            <li className="nav-item">
+              <Link to="/user/:id" className="nav-link" id="nav-text">
+                Profile
+              </Link>
+            </li>
             <li className="nav-item">
               <Link to="/user/new" className="nav-link" id="nav-text">
                 SIGNUP
