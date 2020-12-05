@@ -8,6 +8,7 @@ import Landing from "./pages/landing/Landing";
 import Feed from "./pages/feed/Feed";
 import NewUser from "./pages/newUser/NewUser";
 import UserProfile from "./pages/userProfile/UserProfile";
+import UserSettings from "./pages/userSettings/UserSettings";
 import About from "./pages/about/About";
 
 class App extends React.Component {
@@ -46,17 +47,26 @@ class App extends React.Component {
           />
           <Route
             exact
+            path="/user/:id"
+            render={(props) => (
+              <UserProfile {...props} currentUser={this.state.currentUser} />
+            )}
+          />
+          <Route
+            exact
             path="/user/feed/:id"
             render={(props) => (
               <Feed {...props} currentUser={this.state.currentUser} />
             )}
           />
           <Route
-            path="/user/:id"
+            exact
+            path="/user/settings/:id"
             render={(props) => (
-              <UserProfile {...props} currentUser={this.state.currentUser} />
+              <UserSettings {...props} currentUser={this.state.currentUser} />
             )}
           />
+          
         </Switch>
       </div>
     );
