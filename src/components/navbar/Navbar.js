@@ -36,6 +36,8 @@ class Navbar extends React.Component {
   }
 
   render() {
+    const currentUser = this.props.currentUser;
+    console.log(currentUser);
     return (
       <nav className="navbar navbar-expand-md">
         <Link to="/" className="navbar-brand" id="nav-text">
@@ -65,7 +67,7 @@ class Navbar extends React.Component {
               </form>
             </li> */}
             <li ref={this.profileLinkRef} className="nav-item">
-              <Link to="/user/:id" className="nav-link" id="nav-text">
+              <Link to={`/user/${currentUser}`} className="nav-link" id="nav-text">
                 Profile
               </Link>
             </li>

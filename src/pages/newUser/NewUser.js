@@ -22,9 +22,9 @@ class NewUser extends React.Component {
   handleSignupFormSubmit = (event) => {
     event.preventDefault();
     UserModel.create(this.state).then((data) => {
-      this.props.changeUser(data.users);
+      this.props.changeUser(data.users._id);
+      this.props.history.push(`/user/feed/${data.users._id}`);
     });
-    this.props.history.push(`/user/feed/${this.state.username}`);
   };
 
   render() {

@@ -15,18 +15,21 @@ class App extends React.Component {
     super(props);
     this.state = {
       isLoggedIn: false,
-      currentUser: {},
+      currentUser: null,
     };
   }
 
   changeUser = (data) => {
-    this.setState({currentUser: data, isLoggedIn: true});
-  }
+    this.setState({ currentUser: data, isLoggedIn: true });
+  };
 
   render() {
     return (
       <div className="container-fluid p-0">
-        <Navbar isLoggedIn={this.state.isLoggedIn} />
+        <Navbar
+          isLoggedIn={this.state.isLoggedIn}
+          currentUser={this.state.currentUser}
+        />
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/about" component={About} />
@@ -34,11 +37,26 @@ class App extends React.Component {
             exact
             path="/user/new"
             render={(props) => (
-              <NewUser {...props} isLoggedIn={this.state.isLoggedIn} changeUser={this.changeUser} />
+              <NewUser
+                {...props}
+                isLoggedIn={this.state.isLoggedIn}
+                changeUser={this.changeUser}
+              />
             )}
           />
-          <Route exact path="/user/feed/:username" component={Feed} />
-          <Route path="/user/:id" component={UserProfile} />
+          <Route
+            exact
+            path="/user/feed/:id"
+            render={(props) => (
+              <Feed {...props} currentUser={this.state.currentUser} />
+            )}
+          />
+          <Route
+            path="/user/:id"
+            render={(props) => (
+              <UserProfile {...props} currentUser={this.state.currentUser} />
+            )}
+          />
         </Switch>
       </div>
     );
