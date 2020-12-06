@@ -49,7 +49,6 @@ class Navbar extends React.Component {
 
   render() {
     const currentUser = this.props.currentUser;
-    console.log(currentUser);
     return (
       <nav className="navbar navbar-expand-md">
         <Link to="/" className="navbar-brand" id="nav-text">

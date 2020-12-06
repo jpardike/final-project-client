@@ -22,7 +22,7 @@ class Feed extends React.Component {
 
   renderPostsCards() {
     return this.state.posts.map((post) => {
-      return <PostsCards key={post._id} post={post} />;
+      return <PostsCards key={post._id} post={post} user={this.props.currentUser} />;
     });
   }
 

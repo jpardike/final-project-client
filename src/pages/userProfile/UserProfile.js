@@ -28,6 +28,12 @@ class UserProfile extends React.Component {
     });
   }
 
+  componentDidUpdate() {
+    PostModel.all().then((data) => {
+      this.setState({ posts: data.posts})
+    });
+  }
+
   handleNewPostChange = (event) => {
     this.setState({
       body: event.target.value,
@@ -39,6 +45,7 @@ class UserProfile extends React.Component {
     PostModel.create({ body: this.state.body, user: this.state.user._id }).then(
       (data) => {
         console.log(data);
+        this.setState({ body: '' });
       }
     );
   };
