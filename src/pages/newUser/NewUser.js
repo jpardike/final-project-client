@@ -71,13 +71,6 @@ class NewUser extends React.Component {
             </div>
           </div>
           <div className="row justify-content-center">
-            <button
-              type="button"
-              className="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
             <input value="Signup" type="submit" className="btn btn-primary" />
           </div>
         </form>
