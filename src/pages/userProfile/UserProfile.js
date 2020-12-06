@@ -2,6 +2,8 @@ import React from "react";
 import UserModel from "../../models/user";
 import PostModel from "../../models/post";
 
+import PostsCards from "../../components/postsCards/PostsCards"
+
 import "./userProfile.css";
 
 class UserProfile extends React.Component {
@@ -10,6 +12,7 @@ class UserProfile extends React.Component {
     this.state = {
       user: {},
       body: "",
+      posts: [],
     };
   }
 
@@ -17,9 +20,11 @@ class UserProfile extends React.Component {
     const userId = this.props.currentUser;
 
     UserModel.getOne(userId).then((data) => {
-      console.log("data: ", data);
-
       this.setState({ user: data.user });
+    });
+
+    PostModel.all().then((data) => {
+      this.setState({ posts: data.posts})
     });
   }
 
@@ -37,6 +42,12 @@ class UserProfile extends React.Component {
       }
     );
   };
+
+  renderPosts() {
+    return this.state.posts.map((post) => {
+      return <PostsCards key={post._id} post={post} />
+    })
+  }
 
   render() {
     return (
@@ -64,6 +75,11 @@ class UserProfile extends React.Component {
               ></textarea>
               <input value="Post" type="submit" className="btn btn-primary" />
             </form>
+          </div>
+        </div>
+        <div className="row justify-content-center">
+          <div className="col text-center">
+            <ul>{this.renderPosts()}</ul>
           </div>
         </div>
       </div>

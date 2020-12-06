@@ -1,15 +1,15 @@
-import React from 'react'
+import React from "react";
 
-import './postsCards.css';
+import "./postsCards.css";
 
-class PostsCards extends React.Component {
-  render() {
-    return (
-      <div className="card">
-        Post
-      </div>     
-    )
-  }
+function PostsCards(props) {
+  return (
+    <div className="card">
+      <div className="card-body">
+        <p>{props.post.body}</p>
+      </div>
+    </div>
+  );
 }
 
 export default PostsCards;
