@@ -2,7 +2,7 @@ import React from "react";
 import UserModel from "../../models/user";
 import PostModel from "../../models/post";
 
-import PostsCards from "../../components/postsCards/PostsCards"
+import PostsCards from "../../components/postsCards/PostsCards";
 
 import "./userProfile.css";
 
@@ -24,13 +24,7 @@ class UserProfile extends React.Component {
     });
 
     PostModel.all().then((data) => {
-      this.setState({ posts: data.posts})
-    });
-  }
-
-  componentDidUpdate() {
-    PostModel.all().then((data) => {
-      this.setState({ posts: data.posts})
+      this.setState({ posts: data.posts });
     });
   }
 
@@ -45,15 +39,17 @@ class UserProfile extends React.Component {
     PostModel.create({ body: this.state.body, user: this.state.user._id }).then(
       (data) => {
         console.log(data);
-        this.setState({ body: '' });
+        PostModel.all().then((data) => {
+          this.setState({ posts: data.posts, body: "" });
+        });
       }
     );
   };
 
   renderPosts() {
     return this.state.posts.map((post) => {
-      return <PostsCards key={post._id} post={post} />
-    })
+      return <PostsCards key={post._id} post={post} />;
+    });
   }
 
   render() {
