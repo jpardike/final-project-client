@@ -29,7 +29,7 @@ class Login extends React.Component {
       <div className="row p-0 m-0 justify-content-center align-items-center text-center login-form-container">
         <form className="p-4 login-form" onSubmit={this.handleLoginFormSubmit}>
           <h2 className="mb-5">Login</h2>
-          <div className="row justify-content-center">
+          <div className="row p-0 m-0 justify-content-center">
             <div className="col-5">
               <label className="mb-4" htmlFor="email">
                 Email
