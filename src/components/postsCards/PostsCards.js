@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "./postsCards.css";
 
 function PostsCards(props) {
-  if (props.user === props.post.user) {
     return (
       <Link to={`/post/${props.post._id}`}>
         <div className="card">
@@ -14,17 +13,6 @@ function PostsCards(props) {
         </div>
       </Link>
     );
-  } else {
-    return (
-      <Link to={`/post/${props.post._id}`}>
-        <div className="card">
-          <div className="card-body">
-            <p>{props.post.body}</p>
-          </div>
-        </div>
-      </Link>
-    );
-  }
 }
 
 export default PostsCards;

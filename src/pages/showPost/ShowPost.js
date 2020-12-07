@@ -9,24 +9,39 @@ class ShowPost extends React.Component {
     super(props);
     this.state = {
       post: {},
+      postUserId: '',
     };
   }
 
   componentDidMount() {
     const postId = this.props.match.params.id;
     PostModel.getOne(postId).then((data) => {
-      this.setState({ post: data.post });
+      this.setState({ post: data.post, postUserId: data.post.user._id });
     });
   }
 
   render() {
-    return (
-      <div className="card">
-        <div className="card-body">
-          <p>{this.state.post.body}</p>
+    if (this.props.currentUser === this.state.postUserId) {
+      return (
+        <div className="card">
+          <div className="card-body">
+            <p>{this.state.post.body}</p>
+            <div className="row">
+              <p>update</p>
+              <p>delete</p>
+            </div>
+          </div>
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div className="card">
+          <div className="card-body">
+            <p>{this.state.post.body}</p>
+          </div>
+        </div>
+      );
+    }
   }
 }
 
