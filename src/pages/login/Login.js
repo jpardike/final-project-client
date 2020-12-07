@@ -9,7 +9,6 @@ class Login extends React.Component {
     super(props);
     this.state = {
       email: '',
-      password: '',
     };
   }
 
@@ -19,7 +18,8 @@ class Login extends React.Component {
 
   handleLoginFormSubmit = (event) => {
     event.preventDefault();
-    UserModel.login({email: this.state.email}).then((data) => {
+    UserModel.login(this.state.email).then((data) => {
+      console.log(data);
       this.props.changeUser(data.user._id);
       this.props.history.push(`/user/feed/${data.user._id}`);
     });
@@ -40,8 +40,6 @@ class Login extends React.Component {
               />
               <label htmlFor="password">Password</label>
               <input
-                onChange={this.handleLoginInputChange}
-                value={this.state.password}
                 type="password"
                 name="password"
               />
