@@ -91,7 +91,7 @@ class UserProfile extends React.Component {
                 rows="5"
               ></textarea>
               <br />
-              <input value="Post" type="submit" className="btn btn-primary" />
+              <input value="Post" type="submit" className="btn" />
             </form>
           </div>
         </div>

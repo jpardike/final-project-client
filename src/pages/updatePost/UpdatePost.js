@@ -34,20 +34,21 @@ class UpdatePost extends React.Component {
   render() {
     return (
       <>
-        <div className="row p-0 m-0">
-          <h2>Update Post</h2>
+        <div className="row p-0 m-0 justify-content-center">
+          <h2 className="mt-5">Update Post</h2>
         </div>
-        <div className="row p-0 m-0">
-          <div className="col">
-            <form onSubmit={this.handleUpdatePostSubmit}>
+        <div className="row p-0 m-0 justify-content-center">
+          <div className="col text-center">
+            <form className="mt-5" onSubmit={this.handleUpdatePostSubmit}>
               <textarea
                 value={this.state.body}
                 onChange={this.handleUpdatePostChange}
                 name="body"
-                cols="30"
-                rows="10"
+                cols="70"
+                rows="5"
               ></textarea>
-              <input value="Update" type="submit" className="btn btn-primary" />
+              <br/>
+              <input value="Update" type="submit" className="btn mt-4" />
             </form>
           </div>
         </div>
