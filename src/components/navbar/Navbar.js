@@ -8,7 +8,6 @@ class Navbar extends React.Component {
     super(props);
     this.feedLinkRef = React.createRef();
     this.profileLinkRef = React.createRef();
-    this.profileSettingsLinkRef = React.createRef();
     this.signupLinkRef = React.createRef();
     this.loginLinkRef = React.createRef();
   }
@@ -16,12 +15,10 @@ class Navbar extends React.Component {
   componentDidMount() {
     const feedLink = this.feedLinkRef.current;
     const profileLink = this.profileLinkRef.current;
-    const profileSettingsLink = this.profileSettingsLinkRef.current;
     const signupLink = this.signupLinkRef.current;
     const loginLink = this.loginLinkRef.current;
     feedLink.classList.add("hidden");
     profileLink.classList.add("hidden");
-    profileSettingsLink.classList.add("hidden");
     signupLink.classList.remove("hidden");
     loginLink.classList.remove("hidden");
   }
@@ -29,19 +26,16 @@ class Navbar extends React.Component {
   componentDidUpdate() {
     const feedLink = this.feedLinkRef.current;
     const profileLink = this.profileLinkRef.current;
-    const profileSettingsLink = this.profileSettingsLinkRef.current;
     const signupLink = this.signupLinkRef.current;
     const loginLink = this.loginLinkRef.current;
     if (!this.props.isLoggedIn) {
       feedLink.classList.add("hidden");
       profileLink.classList.add("hidden");
-      profileSettingsLink.classList.add("hidden");
       signupLink.classList.remove("hidden");
       loginLink.classList.remove("hidden");
     } else {
       feedLink.classList.remove("hidden");
       profileLink.classList.remove("hidden");
-      profileSettingsLink.classList.remove("hidden");
       signupLink.classList.add("hidden");
       loginLink.classList.add("hidden");
     }
@@ -85,11 +79,6 @@ class Navbar extends React.Component {
             <li ref={this.profileLinkRef} className="nav-item">
               <Link to={`/user/${currentUser}`} className="nav-link" id="nav-text">
                 Profile
-              </Link>
-            </li>
-            <li ref={this.profileSettingsLinkRef} className="nav-item">
-              <Link to={`/user/setting/${currentUser}`} className="nav-link" id="nav-text">
-                Settings
               </Link>
             </li>
             <li ref={this.signupLinkRef} className="nav-item">
