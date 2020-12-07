@@ -23,6 +23,15 @@ class UserModel {
       });
   }
 
+  static login(email) {
+    return fetch(`${url}/ login/${email}`)
+      .then((res) => res.json())
+      .catch((err) => {
+        console.log('Error fetching data in UserModel.login', err);
+        return { user: {} };
+      });
+  }
+
   // create user
   static create(newUser) {
     return fetch(url, {
