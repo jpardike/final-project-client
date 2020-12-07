@@ -46,7 +46,7 @@ class Navbar extends React.Component {
     return (
       <nav className="navbar navbar-expand-md">
         <Link to="/" className="navbar-brand" id="nav-text">
-          ICON
+          BANDMATES
         </Link>
         <button
           className="navbar-toggler"
