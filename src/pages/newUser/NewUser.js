@@ -33,12 +33,12 @@ class NewUser extends React.Component {
         <form className="p-4 login-form" onSubmit={this.handleSignupFormSubmit}>
           <h2 className="mb-5">Sign Up</h2>
           <div className="row p-0 m-0 align-items-center justify-content-center">
-            <div className="col-5">
+            <div className="col">
               <label className="mb-4" htmlFor="name">
                 Name
               </label>
             </div>
-            <div className="col-5">
+            <div className="col">
               <input
                 className="mb-4"
                 onChange={this.handleSignupInputChange}
@@ -49,12 +49,12 @@ class NewUser extends React.Component {
             </div>
           </div>
           <div className="row p-0 m-0 align-items-center justify-content-center">
-            <div className="col-5">
+            <div className="col">
               <label className="mb-4" htmlFor="username">
                 Username
               </label>
             </div>
-            <div className="col-5">
+            <div className="col">
               <input
                 className="mb-4"
                 onChange={this.handleSignupInputChange}
@@ -65,12 +65,12 @@ class NewUser extends React.Component {
             </div>
           </div>
           <div className="row p-0 m-0 align-items-center justify-content-center">
-            <div className="col-5">
+            <div className="col">
               <label className="mb-4" htmlFor="email">
                 Email
               </label>
             </div>
-            <div className="col-5">
+            <div className="col">
               <input
                 className="mb-4"
                 onChange={this.handleSignupInputChange}
@@ -81,12 +81,12 @@ class NewUser extends React.Component {
             </div>
           </div>
           <div className="row p-0 m-0 align-items-center justify-content-center">
-            <div className="col-5">
+            <div className="col">
               <label className="mb-4" htmlFor="password">
                 Password
               </label>
             </div>
-            <div className="col-5">
+            <div className="col">
               <input
                 className="mb-4"
                 onChange={this.handleSignupInputChange}
@@ -97,10 +97,10 @@ class NewUser extends React.Component {
             </div>
           </div>
           <div className="row p-0 m-0 align-items-center justify-content-center">
-            <div className="col-5">
+            <div className="col">
               <label className="mb-5" htmlFor="location">Location</label>
             </div>
-            <div className="col-5">
+            <div className="col">
               <input
                 className="mb-5"
                 onChange={this.handleSignupInputChange}

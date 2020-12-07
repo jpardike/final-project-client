@@ -30,22 +30,27 @@ class Login extends React.Component {
         <form className="p-4 login-form" onSubmit={this.handleLoginFormSubmit}>
           <h2 className="mb-5">Login</h2>
           <div className="row p-0 m-0 justify-content-center">
-            <div className="col-5">
+            <div className="col">
               <label className="mb-4" htmlFor="email">
                 Email
               </label>
-              <br />
-              <label htmlFor="password">Password</label>
             </div>
-            <div className="col-5">
-              <input className="mb-4" type="password" name="password" />
+            <div className="col">
               <input
-                className="mb-5"
+                className="mb-4"
                 onChange={this.handleLoginInputChange}
                 value={this.state.email}
                 type="email"
                 name="email"
               />
+            </div>
+          </div>
+          <div className="row p-0 m-0 justify-content-center">
+            <div className="col">
+              <label className="mb-5" htmlFor="password">Password</label>
+            </div>
+            <div className="col">
+              <input className="mb-5" type="password" name="password" />
             </div>
           </div>
           <div className="row p-0 m-0 justify-content-center">
