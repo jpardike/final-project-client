@@ -6,7 +6,7 @@ import "./postsCards.css";
 function PostsCards(props) {
     return (
       <Link to={`/post/${props.post._id}`}>
-        <div className="card">
+        <div className="card m-5">
           <div className="card-body">
             <p>{props.post.body}</p>
           </div>

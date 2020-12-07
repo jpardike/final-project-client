@@ -22,19 +22,28 @@ class Feed extends React.Component {
 
   renderPostsCards() {
     return this.state.posts.map((post) => {
-      return <PostsCards key={post._id} post={post} user={this.props.currentUser} />;
+      return (
+        <PostsCards key={post._id} post={post} user={this.props.currentUser} />
+      );
     });
   }
 
   render() {
     if (this.state.loading) {
       return (
-        <div>
+        <div className="row p-0 m-0 justify-content-center">
           <h1>Loading...</h1>
         </div>
       );
     } else {
-      return <div>{this.renderPostsCards()}</div>;
+      return (
+        <div className="row p-0 m-0 justify-content-center">
+          <div className="col-6 text-center">
+            <h2 className="mt-5">Recent Posts</h2>
+            {this.renderPostsCards()}
+          </div>
+        </div>
+      );
     }
   }
 }
