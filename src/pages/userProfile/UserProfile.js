@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import UserModel from "../../models/user";
 import PostModel from "../../models/post";
 
@@ -53,15 +54,19 @@ class UserProfile extends React.Component {
   }
 
   render() {
+    const currentUser = this.props.currentUser;
     return (
       <div>
         <div className="row">
           <div className="col"></div>
           <div className="col">
-            <h3>{this.state.user.name}</h3>
-            <p>{this.state.user.username}</p>
-            <p>{this.state.user.email}</p>
-            <p>{this.state.user.location}</p>
+            <h3>Name: {this.state.user.name}</h3>
+            <p>Username: {this.state.user.username}</p>
+            <p>Email: {this.state.user.email}</p>
+            <p>Location: {this.state.user.location}</p>
+            <Link to={`/user/edit/${currentUser}`}>
+                Edit User
+              </Link>
           </div>
         </div>
         <div className="row justify-content-center">

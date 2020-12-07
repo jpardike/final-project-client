@@ -10,6 +10,7 @@ import NewUser from "./pages/newUser/NewUser";
 import Login from "./pages/login/Login";
 import UserProfile from "./pages/userProfile/UserProfile";
 import UserSettings from "./pages/userSettings/UserSettings";
+import EditUser from "./pages/editUser/EditUser";
 import About from "./pages/about/About";
 
 class App extends React.Component {
@@ -69,6 +70,13 @@ class App extends React.Component {
             path="/user/feed/:id"
             render={(props) => (
               <Feed {...props} currentUser={this.state.currentUser} />
+            )}
+          />
+          <Route
+            exact
+            path="/user/edit/:id"
+            render={(props) => (
+              <EditUser {...props} currentUser={this.state.currentUser} />
             )}
           />
           <Route
