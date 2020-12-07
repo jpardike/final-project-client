@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import UserModel from "../../models/user";
 import PostModel from "../../models/post";
+
+import placeholderImage from "../../assets/placeholder.jpg";
 
 import PostsCards from "../../components/postsCards/PostsCards";
 
@@ -57,37 +59,47 @@ class UserProfile extends React.Component {
     const currentUser = this.props.currentUser;
     return (
       <div>
-        <div className="row p-0 m-0">
-          <div className="col"></div>
-          <div className="col">
+        <div className="row p-0 m-0 justify-content-around align-items-center">
+          <div className="col-4 p-5">
+            <img
+              className="user-image img-fluid"
+              src={placeholderImage}
+              alt="user image"
+            />
+          </div>
+          <div className="col-4 p-5">
             <h3>Name: {this.state.user.name}</h3>
             <p>Username: {this.state.user.username}</p>
             <p>Email: {this.state.user.email}</p>
             <p>Location: {this.state.user.location}</p>
-            <Link to={`/user/edit/${currentUser}`}>
-                Edit User
-              </Link>
+            <Link className="btn" to={`/user/edit/${currentUser}`}>
+              Edit User
+            </Link>
           </div>
         </div>
+        <hr className="profile-hr mt-5 mb-5" />
         <div className="row p-0 m-0 justify-content-center">
           <div className="col text-center">
-            <h4>Add Post</h4>
+            <h3 className="mb-4">Add Post</h3>
             <form onSubmit={this.handleNewPostSubmit}>
-              <label htmlFor="body">Be Heard</label>
               <textarea
+              className="mb-4"
                 value={this.state.body}
                 onChange={this.handleNewPostChange}
                 name="body"
-                cols="30"
-                rows="10"
+                cols="70"
+                rows="5"
               ></textarea>
+              <br />
               <input value="Post" type="submit" className="btn btn-primary" />
             </form>
           </div>
         </div>
+        <hr className="profile-hr mt-5" />
         <div className="row p-0 m-0 justify-content-center">
-          <div className="col text-center">
-            <ul>{this.renderPosts()}</ul>
+          <div className="col-7 mt-5  text-center">
+            <h3>Posts</h3>
+            <ul className="p-0">{this.renderPosts()}</ul>
           </div>
         </div>
       </div>
