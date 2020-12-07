@@ -31,7 +31,7 @@ class NewUser extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSignupFormSubmit}>
-          <div className="row justify-content-center">
+          <div className="row p-0 m-0 justify-content-center">
             <div className="col text-center">
               <label htmlFor="name">Name</label>
               <input
@@ -70,7 +70,7 @@ class NewUser extends React.Component {
               />
             </div>
           </div>
-          <div className="row justify-content-center">
+          <div className="row p-0 m-0 justify-content-center">
             <input value="Signup" type="submit" className="btn btn-primary" />
           </div>
         </form>

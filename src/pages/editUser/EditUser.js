@@ -46,7 +46,7 @@ class EditUser extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleUpdateUserFormSubmit}>
-          <div className="row justify-content-center">
+          <div className="row p-0 m-0 justify-content-center">
             <div className="col text-center">
               <label htmlFor="name">Name</label>
               <input
@@ -78,7 +78,7 @@ class EditUser extends React.Component {
               />
             </div>
           </div>
-          <div className="row justify-content-center">
+          <div className="row p-0 m-0 justify-content-center">
             <input value="Update" type="submit" className="btn btn-primary" />
           </div>
         </form>

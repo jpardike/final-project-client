@@ -34,7 +34,7 @@ class ShowPost extends React.Component {
         <div className="card">
           <div className="card-body">
             <p>{this.state.post.body}</p>
-            <div className="row">
+            <div className="row p-0 m-0">
               <Link className="btn" to={`/post/update/${this.state.post._id}`}>
               Update
               </Link>

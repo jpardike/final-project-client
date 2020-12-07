@@ -57,7 +57,7 @@ class UserProfile extends React.Component {
     const currentUser = this.props.currentUser;
     return (
       <div>
-        <div className="row">
+        <div className="row p-0 m-0">
           <div className="col"></div>
           <div className="col">
             <h3>Name: {this.state.user.name}</h3>
@@ -69,7 +69,7 @@ class UserProfile extends React.Component {
               </Link>
           </div>
         </div>
-        <div className="row justify-content-center">
+        <div className="row p-0 m-0 justify-content-center">
           <div className="col text-center">
             <h4>Add Post</h4>
             <form onSubmit={this.handleNewPostSubmit}>
@@ -85,7 +85,7 @@ class UserProfile extends React.Component {
             </form>
           </div>
         </div>
-        <div className="row justify-content-center">
+        <div className="row p-0 m-0 justify-content-center">
           <div className="col text-center">
             <ul>{this.renderPosts()}</ul>
           </div>
