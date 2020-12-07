@@ -1,20 +1,19 @@
 import React from "react";
 import UserModel from "../../models/user";
 
-
 import "./login.css";
 
 class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
+      email: "",
     };
   }
 
   handleLoginInputChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
-  }
+  };
 
   handleLoginFormSubmit = (event) => {
     event.preventDefault();
@@ -23,25 +22,29 @@ class Login extends React.Component {
       this.props.changeUser(data.user._id);
       this.props.history.push(`/user/feed/${data.user._id}`);
     });
-  }
+  };
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleLoginFormSubmit}>
+      <div className="row p-0 m-0 justify-content-center align-items-center text-center login-form-container">
+        <form className="p-4 login-form" onSubmit={this.handleLoginFormSubmit}>
+          <h2 className="mb-5">Login</h2>
           <div className="row justify-content-center">
-            <div className="col text-center">
-              <label htmlFor="email">Email</label>
+            <div className="col-5">
+              <label className="mb-4" htmlFor="email">
+                Email
+              </label>
+              <br />
+              <label htmlFor="password">Password</label>
+            </div>
+            <div className="col-5">
+              <input className="mb-4" type="password" name="password" />
               <input
+                className="mb-5"
                 onChange={this.handleLoginInputChange}
                 value={this.state.email}
                 type="email"
                 name="email"
-              />
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                name="password"
               />
             </div>
           </div>
