@@ -7,6 +7,7 @@ import Navbar from "./components/navbar/Navbar";
 import Landing from "./pages/landing/Landing";
 import Feed from "./pages/feed/Feed";
 import NewUser from "./pages/newUser/NewUser";
+import Login from "./pages/login/Login";
 import UserProfile from "./pages/userProfile/UserProfile";
 import UserSettings from "./pages/userSettings/UserSettings";
 import About from "./pages/about/About";
@@ -39,6 +40,17 @@ class App extends React.Component {
             path="/user/new"
             render={(props) => (
               <NewUser
+                {...props}
+                isLoggedIn={this.state.isLoggedIn}
+                changeUser={this.changeUser}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/user/login"
+            render={(props) => (
+              <Login
                 {...props}
                 isLoggedIn={this.state.isLoggedIn}
                 changeUser={this.changeUser}
