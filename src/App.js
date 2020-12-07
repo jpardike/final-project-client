@@ -11,6 +11,7 @@ import Login from "./pages/login/Login";
 import UserProfile from "./pages/userProfile/UserProfile";
 import EditUser from "./pages/editUser/EditUser";
 import ShowPost from "./pages/showPost/ShowPost";
+import UpdatePost from "./pages/updatePost/UpdatePost";
 import About from "./pages/about/About";
 
 class App extends React.Component {
@@ -77,6 +78,13 @@ class App extends React.Component {
             path="/user/edit/:id"
             render={(props) => (
               <EditUser {...props} currentUser={this.state.currentUser} />
+            )}
+          />
+          <Route
+            exact
+            path="/post/:id"
+            render={(props) => (
+              <ShowPost {...props} currentUser={this.state.currentUser} />
             )}
           />
           <Route
