@@ -21,6 +21,13 @@ class ShowPost extends React.Component {
     });
   }
 
+  deletePostClick = () => {
+    const postId = this.props.match.params.id;
+    PostModel.destroy(postId).then((data) => {
+      this.props.history.goBack();
+    })
+  }
+
   render() {
     if (this.props.currentUser === this.state.postUserId) {
       return (
@@ -28,11 +35,10 @@ class ShowPost extends React.Component {
           <div className="card-body">
             <p>{this.state.post.body}</p>
             <div className="row">
-              <p>update</p>
-              <Link to={`/post/update/${this.state.post._id}`}>
+              <Link className="btn" to={`/post/update/${this.state.post._id}`}>
               Update
               </Link>
-              <p>delete</p>
+              <button className="btn" onClick={this.deletePostClick}>Delete</button>
             </div>
           </div>
         </div>
