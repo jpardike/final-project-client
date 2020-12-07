@@ -89,9 +89,9 @@ class App extends React.Component {
           />
           <Route
             exact
-            path="/post/:id"
+            path="/post/update/:id"
             render={(props) => (
-              <ShowPost {...props} currentUser={this.state.currentUser} />
+              <UpdatePost {...props} currentUser={this.state.currentUser} />
             )}
           />
         </Switch>

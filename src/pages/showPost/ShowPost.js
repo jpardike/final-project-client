@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import PostModel from "../../models/post";
 
@@ -9,7 +10,7 @@ class ShowPost extends React.Component {
     super(props);
     this.state = {
       post: {},
-      postUserId: '',
+      postUserId: "",
     };
   }
 
@@ -28,6 +29,9 @@ class ShowPost extends React.Component {
             <p>{this.state.post.body}</p>
             <div className="row">
               <p>update</p>
+              <Link to={`/post/update/${this.state.post._id}`}>
+              Update
+              </Link>
               <p>delete</p>
             </div>
           </div>
