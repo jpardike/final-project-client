@@ -44,33 +44,54 @@ class EditUser extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleUpdateUserFormSubmit}>
+      <div className="row p-0 m-0 justify-content-center align-items-center text-center edit-user-form-container">
+        <form className="p-4" onSubmit={this.handleUpdateUserFormSubmit}>
+          <h2 className="mb-5">Edit User</h2>
           <div className="row p-0 m-0 justify-content-center">
-            <div className="col text-center">
-              <label htmlFor="name">Name</label>
-              <input
+            <div className="col">
+              <label className="mb-4" htmlFor="name">Name</label>
+            </div>
+            <div className="col">
+              <input className="mb-4"
                 onChange={this.handleUpdateUserInputChange}
                 value={this.state.name}
                 type="text"
                 name="name"
               />
-              <label htmlFor="username">Username</label>
-              <input
+            </div>
+          </div>
+          <div className="row p-0 m-0 justify-content-center">
+            <div className="col">
+              <label className="mb-4" htmlFor="username">Username</label>
+            </div>
+            <div className="col">
+              <input className="mb-4"
                 onChange={this.handleUpdateUserInputChange}
                 value={this.state.username}
                 type="text"
                 name="username"
               />
-              <label htmlFor="email">Email</label>
-              <input
+            </div>
+          </div>
+          <div className="row p-0 m-0 justify-content-center">
+            <div className="col">
+              <label className="mb-4" htmlFor="email">Email</label>
+            </div>
+            <div className="col">
+              <input className="mb-4"
                 onChange={this.handleUpdateUserInputChange}
                 value={this.state.email}
                 type="email"
                 name="email"
               />
-              <label htmlFor="location">Location</label>
-              <input
+            </div>
+          </div>
+          <div className="row p-0 m-0 justify-content-center">
+            <div className="col">
+              <label className="mb-5" htmlFor="location">Location</label>
+            </div>
+            <div className="col">
+              <input className="mb-5"
                 onChange={this.handleUpdateUserInputChange}
                 value={this.state.location}
                 type="text"
@@ -78,6 +99,7 @@ class EditUser extends React.Component {
               />
             </div>
           </div>
+
           <div className="row p-0 m-0 justify-content-center">
             <input value="Update" type="submit" className="btn btn-primary" />
           </div>
