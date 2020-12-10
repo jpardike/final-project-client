@@ -104,7 +104,7 @@ class EditUser extends React.Component {
             <input value="Update" type="submit" className="btn btn-primary" />
           </div>
         </form>
-        <div ref={this.updateMessageRef} className="row updateUserMessage">
+        <div ref={this.updateMessageRef} className="row p-0 m-0 justify-content-center updateUserMessage">
           <div className="col">
             <p>Update Successful!</p>
           </div>
