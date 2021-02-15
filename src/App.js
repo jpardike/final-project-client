@@ -29,7 +29,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid p-0">
+      <div className="container-fluid p-0 m-0">
         <Navbar
           isLoggedIn={this.state.isLoggedIn}
           currentUser={this.state.currentUser}
